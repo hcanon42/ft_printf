@@ -31,22 +31,6 @@ static int	tablen(char **tab)
 	return (i);
 }
 
-static int	strcmp(char *s1, char *s2)
-{
-	int		c;
-
-	c = 0;
-	while ((s1[c] != '\0') && (s2[c] != '\0'))
-	{
-		if (s1[c] != s2[c])
-			return (s1[c] - s2[c]);
-		c++;
-	}
-	if (s1[c] != s2[c])
-		return (s1[c] - s2[c]);
-	return (0);
-}
-
 void		ft_sort_string_tab(char **tab)
 {
 	char	**a;
@@ -63,7 +47,7 @@ void		ft_sort_string_tab(char **tab)
 			stack_de_swap--;
 			a = &tab[n];
 			b = &tab[n + 1];
-			if (strcmp(*a, *b) > 0)
+			if (ft_strcmp(*a, *b) > 0)
 			{
 				swap(a, b);
 				stack_de_swap = tablen(tab);

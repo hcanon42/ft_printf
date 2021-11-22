@@ -29,7 +29,7 @@ int		ft_atoi(const char *str)
 			stack_neg++;
 		i++;
 	}
-	while (str[i] >= '0' & str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nbr = 10 * nbr + str[i] - 48;
 		i++;

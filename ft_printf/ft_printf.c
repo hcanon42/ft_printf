@@ -29,9 +29,9 @@ int		ft_printf(const char *str, ...)
 		{
 			flags = gestion_flags(str, &i);
 			width = gestion_width(str, &i);
-			width[0] = (width[0] == -1) ? va_arg(ap, unsigned int) : width[0];
+			width[0] = (width[0] == -1) ? va_arg(ap, int) : width[0];
 			(width[0] < 0) ? flags[ft_strlen(flags)] = '-' : 0;
-			width[1] = (width[1] == -1) ? va_arg(ap, unsigned int) : width[1];
+			width[1] = (width[1] == -1) ? va_arg(ap, int) : width[1];
 			cpt += gestion_arg(str[i++], &ap, flags, width);
 			free(flags);
 			free(width);
